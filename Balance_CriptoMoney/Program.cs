@@ -66,7 +66,7 @@ namespace Balance_CriptoMoney
 
         public void CheckBalance()
         {
-            Console.WriteLine($"Tu saldo actual es de {_balance:C}.");
+            Console.WriteLine($"Tu saldo actual es   de {_balance:C}.");
             Console.ReadKey();
         }
     }
