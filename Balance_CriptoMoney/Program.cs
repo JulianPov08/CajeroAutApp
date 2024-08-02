@@ -30,8 +30,9 @@ namespace Balance_CriptoMoney
         static void CheckBalance()
         {
             
-            decimal balance = 1000.00m; 
+            decimal balance = 500000.00m;
             Console.WriteLine($"Tu saldo actual es de {balance:C}.");
+            Console.ReadKey();
         }
     }
 }
