@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ATM
+namespace Iniciando_Sesion 
 {
     class Program
     {
@@ -10,12 +10,14 @@ namespace ATM
             if (Login())
             {
                 Console.WriteLine("Inicio de sesión Realizado");
-                
+
             }
             else
             {
                 Console.WriteLine("Inicio de sesión fallido");
+
             }
+            Console.ReadKey();
         }
 
         static bool Login()
@@ -25,7 +27,8 @@ namespace ATM
             Console.Write("Ingrese su clave ");
             string password = Console.ReadLine();
             
-            return username == " Nequi" && password == "0809"; 
+            return username == "Nequi" && password == "0809";
+            Console.ReadKey();
         }
     }
 }
