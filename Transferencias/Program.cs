@@ -33,8 +33,9 @@ namespace Transferencias
             decimal amount = Convert.ToDecimal(Console.ReadLine());
             Console.Write("Ingrese el número de cuenta del destinatario: ");
             string accountNumber = Console.ReadLine();
-            
+
             Console.WriteLine($"Has echo un transferido {amount:C} a la cuenta {accountNumber}.");
+            Console.ReadKey();
         }
     }
 }
