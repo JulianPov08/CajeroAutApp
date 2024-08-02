@@ -1,33 +1,46 @@
 ﻿using System;
 
-namespace Deposito
+
+namespace CajeroCriptoMoney
 {
     class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Bienvenido al Cajero CriptoMoney");
-            if (Login())
+
+            Cajero cajero = new Cajero();
+            if (cajero.Login())
             {
-                Console.WriteLine("Inicio de sesión Realizado");
-                Deposit();
+                Console.WriteLine("Inicio de sesión realizado");
+                cajero.Deposit();
             }
             else
             {
                 Console.WriteLine("Inicio de sesión fallido");
             }
         }
+    }
 
-        static bool Login()
+    class Cajero
+    {
+        private Usuario _usuario;
+
+        public Cajero()
+        {
+            _usuario = new Usuario("Nequi", "0809");
+        }
+
+        public bool Login()
         {
             Console.Write("Ingrese su usuario: ");
             string username = Console.ReadLine();
             Console.Write("Ingrese su clave: ");
             string password = Console.ReadLine();
-            return username == "Nequi" && password == "0809";
+            return _usuario.Autenticar(username, password);
         }
 
-        static void Deposit()
+        public void Deposit()
         {
             Console.Write("Ingrese la cantidad que vas a depositar: ");
             decimal amount = Convert.ToDecimal(Console.ReadLine());
@@ -35,6 +48,23 @@ namespace Deposito
             Console.WriteLine($"Has depositado {amount:C}.");
 
             Console.ReadKey();
+        }
+    }
+
+    class Usuario
+    {
+        public string Username { get; private set; }
+        public string Password { get; private set; }
+
+        public Usuario(string username, string password)
+        {
+            Username = username;
+            Password = password;
+        }
+
+        public bool Autenticar(string username, string password)
+        {
+            return Username == username && Password == password;
         }
     }
 }
