@@ -31,8 +31,10 @@ namespace Retiro
         {
             Console.Write("Ingrese la cantidad que quieres retirar: ");
             decimal amount = Convert.ToDecimal(Console.ReadLine());
-           
+
             Console.WriteLine($"Has realizado un retiro {amount:C}.");
+
+            Console.ReadKey();
         }
     }
 }
