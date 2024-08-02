@@ -31,8 +31,10 @@ namespace Deposito
         {
             Console.Write("Ingrese la cantidad que vas a depositar: ");
             decimal amount = Convert.ToDecimal(Console.ReadLine());
-            
+
             Console.WriteLine($"Has depositado {amount:C}.");
+
+            Console.ReadKey();
         }
     }
 }
